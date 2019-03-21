@@ -13,3 +13,13 @@ archivo.Close();
 System.Console.WriteLine("There were {0} lines.", contador);  
 
 System.Console.ReadLine();  
+
+
+//ejercicio 3
+string Casoprueba ="0001:mediaAritmetica:2 4 8:4.6666";
+string[] casoprueba= Casoprueba.split(":");
+
+//solo imprime
+for (int i = 0; i < casoprueba.length; i++) {
+	System.out.println(casoprueba[i]);
+
