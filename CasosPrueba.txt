@@ -11,3 +11,8 @@
 0011:mediaAritmetica:NULL:0.0000
 0012:mediaGeometrica:NULL:0.0000
 0013:mediaNoExiste:2 3 6:3.0320
+0014:mediaAritmetica:2 8 4 6 10:6.0000
+0015:mediaArmonica:6 9 8 5 3:5.3412
+0016:mediaGeometrica:3 4 5 6 7:4.7893
+0017:mediaArmonica:3 2 7 5 4:3.5058
+0018:mediaAritmetica:9 8 3 7 8:7.0000
