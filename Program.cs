@@ -14,7 +14,7 @@ namespace AutomatizarPruebasUnitarias
                 string[] pruebas = casos[i].Split(':'); // esto devulve un vector de 4
                 for(int j = 0; j < 4; j++) // este ciclo es el que llega hasta menor a 4
                 {
-                    casosPrueba[i,j] = pruebas[j]; // estamos ciclando en el vector pequeño, de 4 elementos
+                    casosPrueba[i,j] = pruebas[j]; //ciclando en el vector pequeño, de 4 elementos
                 }
             }
         }
