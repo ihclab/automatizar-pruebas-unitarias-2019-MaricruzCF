@@ -18,7 +18,7 @@ namespace AutomatizarPruebasUnitarias
                 }
             }
 
-            for(int i =0; i < casos.Length; i++)
+            for(int i =0; i < casos.Length; i++) // Cicla cada caso
             {
                 // Donde se almacenaran los valores en su tipo correcto.
                 int[] entradas;
@@ -36,6 +36,31 @@ namespace AutomatizarPruebasUnitarias
                 
                 //La conversion de cadena a double para su manipulacion
                 resultado = double.Parse(casosPrueba[i, 3]);
+                
+                //llamar al metodo
+                string metodo = casosPrueba[i,1];
+                if(metodo == "mediaArimetica")
+                {
+                    // Llamar a meetodo de la clase
+                    Medias.mediaAritmetica(entradas);
+                }
+                else if(metodo == "mediaArmonica")
+                {
+                    // Llamar a meetodo de la clase
+                    Medias.mediaArmonica(entradas);
+                }
+                else if(metodo == "mediaGeometrica")
+                {
+                    // Crer la instancia (objeto) de la clase
+                    Medias medias = new Medias(); 
+                    // Lamar metodo del objeto
+                    medias.mediaGeometrica(entradas);
+                }
+                else
+                {
+                    //Excecion de metodo no existente
+                    throw new System.InvalidOperationException("Medida no existente");
+                }
 
             }
         }
