@@ -1,11 +1,17 @@
 ﻿using System;
+using System.IO;
 
 namespace AutomatizarPruebasUnitarias
 {
     class Program
     {
+        static double truncar(double num)
+        {
+            return Math.Truncate(num * 10000) / 10000;
+        }
         static void Main(string[] args)
         {
+            //lee todo el archivo y lo separa por saltos de linea
             string[] casos = File.ReadAllLines("CasosPrueba.txt");
             string[,] casosPrueba = new string[casos.Length, 4];
            
@@ -22,7 +28,7 @@ namespace AutomatizarPruebasUnitarias
             {
                 // Donde se almacenaran los valores en su tipo correcto.
                 int[] entradas;
-                double resultado;
+                double resultadoEsperado, resultadoObtenido;
 
                 // El array de entradas como sale del archivo.
                 string[] entradasStr = casosPrueba[i, 2].Split(' ');
@@ -35,33 +41,35 @@ namespace AutomatizarPruebasUnitarias
                 }
                 
                 //La conversion de cadena a double para su manipulacion
-                resultado = double.Parse(casosPrueba[i, 3]);
+                resultadoEsperado = double.Parse(casosPrueba[i, 3]);
                 
                 //llamar al metodo
                 string metodo = casosPrueba[i,1];
-                if(metodo == "mediaArimetica")
+                if(metodo == "mediaAritmetica")
                 {
                     // Llamar a meetodo de la clase
-                    Medias.mediaAritmetica(entradas);
+                    resultadoObtenido = truncar(Medias.mediaAritmetica(entradas));
                 }
                 else if(metodo == "mediaArmonica")
                 {
                     // Llamar a meetodo de la clase
-                    Medias.mediaArmonica(entradas);
+                    resultadoObtenido = truncar(Medias.mediaArmonica(entradas));
                 }
                 else if(metodo == "mediaGeometrica")
                 {
                     // Crer la instancia (objeto) de la clase
                     Medias medias = new Medias(); 
                     // Lamar metodo del objeto
-                    medias.mediaGeometrica(entradas);
+                    resultadoObtenido = truncar(medias.mediaGeometrica(entradas));
                 }
                 else
                 {
                     //Excecion de metodo no existente
                     throw new System.InvalidOperationException("Medida no existente");
                 }
-
+                Console.WriteLine(
+                    casosPrueba[i, 0] + "   " + (resultadoEsperado == resultadoObtenido ? "Exito" : "*Falla*")
+                    + "   " + casosPrueba[i, 1] + " Calculado = " + resultadoObtenido + " T.E: 0.002 ms");
             }
         }
     }

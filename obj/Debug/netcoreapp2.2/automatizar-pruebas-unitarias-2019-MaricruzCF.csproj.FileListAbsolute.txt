@@ -1,0 +1,11 @@
+C:\Users\Michelita\Desktop\automatizar-pruebas-unitarias-2019-MaricruzCF\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-MaricruzCF.deps.json
+C:\Users\Michelita\Desktop\automatizar-pruebas-unitarias-2019-MaricruzCF\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-MaricruzCF.runtimeconfig.json
+C:\Users\Michelita\Desktop\automatizar-pruebas-unitarias-2019-MaricruzCF\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-MaricruzCF.runtimeconfig.dev.json
+C:\Users\Michelita\Desktop\automatizar-pruebas-unitarias-2019-MaricruzCF\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-MaricruzCF.dll
+C:\Users\Michelita\Desktop\automatizar-pruebas-unitarias-2019-MaricruzCF\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-MaricruzCF.pdb
+C:\Users\Michelita\Desktop\automatizar-pruebas-unitarias-2019-MaricruzCF\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-MaricruzCF.csprojAssemblyReference.cache
+C:\Users\Michelita\Desktop\automatizar-pruebas-unitarias-2019-MaricruzCF\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-MaricruzCF.csproj.CoreCompileInputs.cache
+C:\Users\Michelita\Desktop\automatizar-pruebas-unitarias-2019-MaricruzCF\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-MaricruzCF.AssemblyInfoInputs.cache
+C:\Users\Michelita\Desktop\automatizar-pruebas-unitarias-2019-MaricruzCF\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-MaricruzCF.AssemblyInfo.cs
+C:\Users\Michelita\Desktop\automatizar-pruebas-unitarias-2019-MaricruzCF\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-MaricruzCF.dll
+C:\Users\Michelita\Desktop\automatizar-pruebas-unitarias-2019-MaricruzCF\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-MaricruzCF.pdb

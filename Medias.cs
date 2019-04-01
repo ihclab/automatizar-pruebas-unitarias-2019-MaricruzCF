@@ -16,7 +16,7 @@ namespace AutomatizarPruebasUnitarias {
             for(int i= 0; i<vals.Length;i++){
                 suma += vals[i];
             }
-            return suma/vals.Length;
+            return suma / (double) vals.Length;
         }
 
         /**
@@ -30,7 +30,7 @@ namespace AutomatizarPruebasUnitarias {
          *  Usa raizEnesima para calcular y regresar la media geométrica
          */
         public double mediaGeometrica(params int[] vals) { 
-            int multi;
+            int multi = 0;
             for(int i = 0;i<vals.Length;i++){
                 multi *= vals[i];
             }
@@ -45,7 +45,7 @@ namespace AutomatizarPruebasUnitarias {
             for(int i = 0; i <vals.Length; i++){
                 suma += 1 / vals[i];
             }
-            return vals.Length/suma;
+            return (double) vals.Length / suma;
          }
     }
 }
