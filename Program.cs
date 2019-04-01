@@ -5,6 +5,7 @@ namespace AutomatizarPruebasUnitarias
 {
     class Program
     {
+        //Con este metodo se eliminan los numeros despues de los 4 decimales
         static double truncar(double num)
         {
             return Math.Truncate(num * 10000) / 10000;
@@ -27,21 +28,21 @@ namespace AutomatizarPruebasUnitarias
             for(int i =0; i < casos.Length; i++) // Cicla cada caso
             {
                 // Donde se almacenaran los valores en su tipo correcto.
-                int[] entradas;
+                int[] entradas = null;
                 double resultadoEsperado, resultadoObtenido;
 
                 // El array de entradas como sale del archivo.
-                string[] entradasStr = casosPrueba[i, 2].Split(' ');
-                entradas = new int[entradasStr.Length];
-
-                //La conversion de cadena a entero para su manipulacion
-                for (int j = 0; j < entradasStr.Length; j++)
+                if (casosPrueba[i, 2] != "NULL")
                 {
-                    entradas[j] = int.Parse(entradasStr[j]);
+                    string[] entradasStr = casosPrueba[i, 2].Split(' ');
+                    entradas = new int[entradasStr.Length];
+
+                    //La conversion de cadena a entero para su manipulacion
+                    for (int j = 0; j < entradasStr.Length; j++)
+                    {
+                        entradas[j] = int.Parse(entradasStr[j]);
+                    }
                 }
-                
-                //La conversion de cadena a double para su manipulacion
-                resultadoEsperado = double.Parse(casosPrueba[i, 3]);
                 
                 //llamar al metodo
                 string metodo = casosPrueba[i,1];
@@ -67,6 +68,9 @@ namespace AutomatizarPruebasUnitarias
                     //Excecion de metodo no existente
                     throw new System.InvalidOperationException("Medida no existente");
                 }
+
+                //La conversion de cadena a double para su manipulacion
+                resultadoEsperado = double.Parse(casosPrueba[i, 3]);
                 Console.WriteLine(
                     casosPrueba[i, 0] + "   " + (resultadoEsperado == resultadoObtenido ? "Exito" : "*Falla*")
                     + "   " + casosPrueba[i, 1] + " Calculado = " + resultadoObtenido + " T.E: 0.002 ms");
