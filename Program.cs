@@ -43,37 +43,58 @@ namespace AutomatizarPruebasUnitarias
                         entradas[j] = int.Parse(entradasStr[j]);
                     }
                 }
-                
-                //llamar al metodo
-                string metodo = casosPrueba[i,1];
-                if(metodo == "mediaAritmetica")
-                {
-                    // Llamar a meetodo de la clase
-                    resultadoObtenido = truncar(Medias.mediaAritmetica(entradas));
-                }
-                else if(metodo == "mediaArmonica")
-                {
-                    // Llamar a meetodo de la clase
-                    resultadoObtenido = truncar(Medias.mediaArmonica(entradas));
-                }
-                else if(metodo == "mediaGeometrica")
-                {
-                    // Crer la instancia (objeto) de la clase
-                    Medias medias = new Medias(); 
-                    // Lamar metodo del objeto
-                    resultadoObtenido = truncar(medias.mediaGeometrica(entradas));
-                }
-                else
-                {
-                    //Excecion de metodo no existente
-                    throw new System.InvalidOperationException("Medida no existente");
-                }
 
-                //La conversion de cadena a double para su manipulacion
-                resultadoEsperado = double.Parse(casosPrueba[i, 3]);
-                Console.WriteLine(
-                    casosPrueba[i, 0] + "   " + (resultadoEsperado == resultadoObtenido ? "Exito" : "*Falla*")
-                    + "   " + casosPrueba[i, 1] + " Calculado = " + resultadoObtenido + " T.E: 0.002 ms");
+                try
+                {
+                    //llamar al metodo
+                    string metodo = casosPrueba[i,1];
+                    if(metodo == "mediaAritmetica")
+                    {
+                        // Llamar a meetodo de la clase
+                        resultadoObtenido = truncar(Medias.mediaAritmetica(entradas));
+                    }
+                    else if(metodo == "mediaArmonica")
+                    {
+                        // Llamar a meetodo de la clase
+                        resultadoObtenido = truncar(Medias.mediaArmonica(entradas));
+                    }
+                    else if(metodo == "mediaGeometrica")
+                    {
+                        // Crer la instancia (objeto) de la clase
+                        Medias medias = new Medias(); 
+                        // Lamar metodo del objeto
+                        resultadoObtenido = truncar(medias.mediaGeometrica(entradas));
+                    }
+                    else
+                    {
+                        //Excecion de metodo no existente
+                        throw new System.InvalidOperationException("Medida no existente");
+                    }
+
+                    //La conversion de cadena a double para su manipulacion
+                    resultadoEsperado = double.Parse(casosPrueba[i, 3]);
+                    Console.WriteLine(
+                        casosPrueba[i, 0] + "   " + (resultadoEsperado == resultadoObtenido ? "Exito" : "*Falla*")
+                        + "   " + casosPrueba[i, 1] + " Calculado = " + resultadoObtenido + " T.E: 0.002 ms");
+                }
+                catch (Exception)
+                {
+                    if (casosPrueba[i, 3] == "Exception")
+                    {
+                        Console.WriteLine(
+                            casosPrueba[i, 0] + "   Exito"
+                            + "   " + casosPrueba[i, 1] + " Calculado = Exception T.E: 0.002 ms"
+                        );
+                    }
+                    else
+                    {
+                        Console.WriteLine(
+                            casosPrueba[i, 0] + "   *Fallo*"
+                            + "   " + casosPrueba[i, 1] + " Calculado = Exception T.E: 0.002 ms"
+                        );
+                    }
+                    
+                }
             }
         }
     }
